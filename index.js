@@ -16,6 +16,8 @@ const errorMessageElement = document.getElementById("error-message");
 // Create an image element to display the weather icon
 const iconElement = document.createElement("img");
 iconElement.id = "weather-icon";
+
+// Append the icon element to the weather-info div
 document.querySelector(".weather-info").appendChild(iconElement);
 
 // Add click event listener to the search button
@@ -25,9 +27,13 @@ searchBtn.addEventListener("click", () => {
   errorMessageElement.textContent = "";
   // Check if the input is not empty
   if (location) {
+    // Clear previous search results
+    clearPreviousResults();
     // Fetch weather data for the entered location
     fetchWeatherData(location);
   } else {
+    // Clear previous search results
+    clearPreviousResults();
     // Display error message if the input is empty
     errorMessageElement.textContent = "Please enter a valid city name.";
   }
@@ -64,4 +70,13 @@ function fetchWeatherData(location) {
       errorMessageElement.textContent =
         "Error fetching weather data: " + error.message;
     });
+}
+
+// Function to clear previous search results
+function clearPreviousResults() {
+  locationElement.textContent = "";
+  temperatureElement.textContent = "";
+  descriptionElement.textContent = "";
+  iconElement.src = "";
+  iconElement.alt = "";
 }
