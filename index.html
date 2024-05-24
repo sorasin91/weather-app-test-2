@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <h1>Weather Info</h1>
+
+      <!-- Input field for the location (city) -->
+      <input type="text" id="locationInput" placeholder="Please enter a city" />
+
+      <!-- Search button -->
+      <button id="search-btn">Search</button>
+
+      <!-- Section to display weather information -->
+      <div class="weather-info">
+        <!-- Elements to display the fetched weather data -->
+        <h2 id="location"></h2>
+        <p id="temperature"></p>
+        <p id="description"></p>
+
+        <!-- Element to display error messages -->
+        <p id="error-message"></p>
+      </div>
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="index.js"></script>
+  </body>
+</html>
